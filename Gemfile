@@ -46,6 +46,7 @@ gem 'bootsnap', require: false
 
 gem 'poke-api-v2'
 gem 'will_paginate'
+gem 'active_model_serializers'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
