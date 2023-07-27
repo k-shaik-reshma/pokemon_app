@@ -1,13 +1,17 @@
-module Commands
-  class FetchPokemonCommand < Command
-    def initialize; end
+class Commands::FetchPokemonCommand < Commands::Command
+  attr_reader :page
 
-    def execute
-      fetch_all_pokemon
-    end
+  def initialize(page: 1)
+    super
 
-    def fetch_all_pokemon
-      Pokemon.all
-    end
+    @page = page
+  end
+
+  def execute
+    fetch_all_pokemon
+  end
+
+  def fetch_all_pokemon
+    Pokemon.paginate(page: page)
   end
 end

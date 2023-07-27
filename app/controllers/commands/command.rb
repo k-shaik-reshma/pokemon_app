@@ -1,4 +1,4 @@
-class Command
+class Commands::Command
   include ActiveModel::Validations
 
   attr_accessor :token
