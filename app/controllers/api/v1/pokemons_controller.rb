@@ -1,5 +1,5 @@
 class Api::V1::PokemonsController < ApplicationController
   def show
-    render json: Pokemon.all
+    render json: ::Commands::FetchPokemonCommand.new.execute
   end
 end

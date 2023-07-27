@@ -45,7 +45,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'bootsnap', require: false
 
 gem 'poke-api-v2'
-
+gem 'will_paginate'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
