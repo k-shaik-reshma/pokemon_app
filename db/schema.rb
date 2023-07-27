@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_26_223202) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_27_193047) do
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
     t.integer "weight"
@@ -18,6 +18,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_26_223202) do
     t.integer "poke_api_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+    t.integer "poke_api_id"
+    t.string "timestamps"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "poke_type_id"
+    t.integer "pokemon_id"
   end
 
 end
