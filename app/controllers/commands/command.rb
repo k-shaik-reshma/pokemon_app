@@ -1,14 +1,18 @@
-class Commands::Command
-  include ActiveModel::Validations
+# frozen_string_literal: true
 
-  attr_accessor :token
+module Commands
+  class Command
+    include ActiveModel::Validations
 
-  def initialize(attributes = {})
-    attributes.each do |name, value|
-      method("#{name}=".to_sym).call(value) if methods.include? "#{name}=".to_sym
+    attr_accessor :token
+
+    def initialize(attributes = {})
+      attributes.each do |name, value|
+        method("#{name}=".to_sym).call(value) if methods.include? "#{name}=".to_sym
+      end
     end
-  end
 
-  # this method can be ovveridden in other classes
-  def execute; end
+    # this method can be ovveridden in other classes
+    def execute; end
+  end
 end

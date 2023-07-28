@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Serializers
   class PokemonSerializer < ActiveModel::Serializer
     attributes :id, :name, :weight, :height

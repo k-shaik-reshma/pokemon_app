@@ -44,9 +44,9 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
 
+gem 'active_model_serializers'
 gem 'poke-api-v2'
 gem 'will_paginate'
-gem 'active_model_serializers'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -70,18 +70,20 @@ group :development do
   gem 'byebug', platform: :mri
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'factory_bot_rails'
   gem 'factory_girl_rails'
   gem 'rspec-rails'
+
   gem 'rubocop'
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'factory_bot_rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
 
-gem 'sidekiq'
-gem 'factory_bot_rails'
 gem 'dry-monads'
+gem 'sidekiq'

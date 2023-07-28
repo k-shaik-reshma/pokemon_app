@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PokemonApiService
   # fetching pokemon data from poke-api-v2 gem
   def self.fetch_pokemon_data

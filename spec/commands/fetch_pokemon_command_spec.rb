@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/commands/fetch_pokemon_command_spec.rb
 require 'rails_helper'
 

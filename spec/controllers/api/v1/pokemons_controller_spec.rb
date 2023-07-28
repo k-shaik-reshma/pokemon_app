@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 # spec/controllers/api/v1/pokemons_controller_spec.rb
