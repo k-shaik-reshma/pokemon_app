@@ -70,8 +70,6 @@ group :development do
   gem 'byebug', platform: :mri
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'factory_bot_rails'
-  gem 'factory_girl_rails'
   gem 'rspec-rails'
 
   gem 'rubocop'
@@ -80,10 +78,10 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
-  gem 'factory_bot_rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+gem 'factory_bot_rails'
 
 gem 'dry-monads'
 gem 'sidekiq'
