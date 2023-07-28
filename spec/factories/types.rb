@@ -1,7 +1,10 @@
-FactoryGirl.define do
+# frozen_string_literal: true
+
+FactoryBot.define do
   factory :type do
-    name "MyString"
-    poke_api_id 1
-    timestamps "MyString"
+    name { 'Some Type' }
+    poke_api_id { 1 }
+    poke_type_id { 1 }
+    pokemon_id { 1 }
   end
 end

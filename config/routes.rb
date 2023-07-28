@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     namespace :v1 do
-      resource :pokemon
+      resources :pokemons
     end
   end
 end
