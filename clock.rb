@@ -2,7 +2,7 @@ require './config/boot'
 require './config/environment'
 
 module Clockwork
-  every(5.seconds, 'pokemon seeding job') do
+  every(1.day, 'midnight.job', at: '00:00') do
     PokemonSeedWorker.perform_async
   end
 end
