@@ -71,7 +71,7 @@ group :development do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
-  gem 'rspec-rails', '~> 3.5'
+  gem 'rspec-rails'
   gem 'rubocop'
 end
 
