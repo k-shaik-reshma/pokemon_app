@@ -1,5 +1,9 @@
+require 'dry/monads'
+
 class Commands::FetchPokemonCommand < Commands::Command
   attr_reader :page, :id
+
+  include Dry::Monads[:result, :do]
 
   def initialize(page: 1, id: nil)
     super
@@ -9,7 +13,9 @@ class Commands::FetchPokemonCommand < Commands::Command
   end
 
   def execute
-    fetch_pokemon
+    Success(fetch_pokemon)
+  rescue StandardError => e
+    Failure(e.message)
   end
 
   def fetch_pokemon

@@ -1,12 +1,22 @@
 class Api::V1::PokemonsController < ApplicationController
   def index
     pokemons = Commands::FetchPokemonCommand.new(page: pokemon_params[:page]).execute
-    render json: pokemons, each_serializer: Serializers::PokemonSerializer
+
+    if pokemons.failure?
+      render json: { message: pokemon.failure }, status: 400
+    else
+      render json: pokemons.value!, each_serializer: Serializers::PokemonSerializer
+    end
   end
 
   def show
     pokemon = Commands::FetchPokemonCommand.new(page: pokemon_params[:page], id: pokemon_params[:id]).execute
-    render json: pokemon, serializer: Serializers::PokemonSerializer
+
+    if pokemon.failure?
+      render json: { message: pokemon.failure }, status: 400
+    else
+      render json: pokemon.value!, serializer: Serializers::PokemonSerializer
+    end
   end
 
   private
