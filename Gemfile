@@ -83,5 +83,7 @@ group :test do
 end
 gem 'factory_bot_rails'
 
+gem 'clockwork'
 gem 'dry-monads'
-gem 'sidekiq'
+gem 'redis-client'
+gem 'sidekiq', '~> 5.2.8'
