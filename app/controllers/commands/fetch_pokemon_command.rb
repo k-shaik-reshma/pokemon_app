@@ -19,10 +19,9 @@ class Commands::FetchPokemonCommand < Commands::Command
   end
 
   def fetch_pokemon
-    id_or_name = id.to_i
-    return Pokemon.find_by(name: id) if id.present? && id_or_name.zero?
+    return Pokemon.find_by(name: id) if id.present? && id.to_i.zero?
 
-    return Pokemon.find(id) if id.present?
+    return Pokemon.find(id) if id.present? && id.try(:to_i).try(:positive?)
 
     Pokemon.paginate(page: page)
   end

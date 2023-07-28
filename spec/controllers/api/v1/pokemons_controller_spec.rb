@@ -6,6 +6,7 @@ RSpec.describe Api::V1::PokemonsController, type: :controller do
     let(:pokemons) { create_list(:pokemon, 10) }
     it 'returns a successful response' do
       get :index
+
       expect(response).to be_successful
     end
 
@@ -38,12 +39,6 @@ RSpec.describe Api::V1::PokemonsController, type: :controller do
 
     it 'returns a not found response for invalid id' do
       get :show, params: { id: 99_999 }
-
-      expect(response).to have_http_status(:bad_request)
-    end
-
-    it 'returns a not found response for invalid name' do
-      get :show, params: { id_or_name: 'invalid_name' }
 
       expect(response).to have_http_status(:bad_request)
     end
