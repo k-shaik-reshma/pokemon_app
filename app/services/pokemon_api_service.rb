@@ -15,12 +15,19 @@ class PokemonApiService
     pokemon = Pokemon.find_or_initialize_by(name: result.name)
 
     # Update the attributes
-    pokemon.height      = result.height
-    pokemon.weight      = result.weight
-    pokemon.poke_api_id = result.id
-    type_names          = result.types.map { |pokemon_type| pokemon_type.type.name }
+    pokemon.assign_attributes(pokemon_attributes(result))
+    type_names = result.types.map { |pokemon_type| pokemon_type.type.name }
     pokemon.types << Type.where(name: type_names)
     # Save the Pokemon record
     pokemon.save!
+  end
+
+  def self.pokemon_attributes(result)
+    {
+      name: result.name,
+      height: result.height,
+      weight: result.weight,
+      poke_api_id: result.id
+    }
   end
 end
