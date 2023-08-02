@@ -23,17 +23,14 @@ RSpec.describe Commands::FetchPokemonCommand do
     end
 
     context 'when fetching pokemon by id' do
-      let(:id) { 1 }
+      let(:id) { pokemon.id }
       it 'returns a Success monad' do
-        create(:pokemon)
-
         result = command.execute
 
         expect(result).to be_a(Dry::Monads::Result::Success)
       end
 
       it 'fetches the correct pokemon by id' do
-        pokemon = create(:pokemon)
         result = command.execute
 
         expect(result.value!).to eq(pokemon)
@@ -41,17 +38,15 @@ RSpec.describe Commands::FetchPokemonCommand do
     end
 
     context 'when fetching pokemon by name' do
-      let(:id) { 'Pikachu' }
+      let(:id) { pokemon.name }
 
       it 'returns a Success monad' do
-        create(:pokemon)
         result = command.execute
 
         expect(result).to be_a(Dry::Monads::Result::Success)
       end
 
       it 'fetches the correct pokemon by name' do
-        pokemon = create(:pokemon)
         result = command.execute
 
         expect(result.value!.name).to eq(pokemon.name)
