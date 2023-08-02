@@ -1,12 +1,24 @@
 ## How to install the Project 💻
 
-Step 1: Clone the project
+Step 1: Clone the project from
+[here](git@github.com:k-shaik-reshma/pokemon_app.git) by using command
+`git clone {link}`
 
-Step 2: rails version used: 7.0.6 🚃
+Step 2: Once you clone the repo `cd {cloned_directory}`
 
-Step 3: ruby version used: 3.0.0 ♦️
+Step 3: Install the below mentioned ruby version with either of the ruby version
+managers like `rvm` or `rbenv`.
 
-Step 4: run the command `bundle install`
+Step 4: Install the rails with help of `gem install rails`
+
+Step 5: This project uses inbuilt sqlite given by Rails, So there is no need to
+add any other additional databases like mysql or postgreSQL
+
+Step 6: rails version used: 7.0.6 🚃
+
+Step 7: ruby version used: 3.0.0 ♦️
+
+Step 8: run the command `bundle install`
 
 #
 
@@ -42,4 +54,5 @@ detailedly listed on Swagger documentation here
 
 3. **Rspec** is used for writing test cases `bundle exec rspec`
 
-4. Entire Code is linted with **Rubocop**
+4. For maintaining the code linting uniformity this project follows extensive
+   use for **rubocop**, the rules are mentioned in `rubocop.yml`
